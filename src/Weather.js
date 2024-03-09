@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -14,13 +15,16 @@ export default function Weather() {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       pressure: response.data.temperature.pressure,
+      date: new Date(response.data.time * 1000),
     });
   }
 
   if (weatherData.ready) {
     return (
       <div class="row justify-content-evenly combinedReport">
-        <div className="Date text-center p-4">Friday 18:04</div>
+        <div className="DateTime text-center p-4">
+          <FormattedDate date={weatherData.date} />
+        </div>
         <div class="col-4 quick">
           <ul class="list-unstyled">
             <li id="current-city">
