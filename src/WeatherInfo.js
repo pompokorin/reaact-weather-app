@@ -13,6 +13,7 @@ export default function WeatherInfo(props) {
             <i class="fa-solid fa-location-dot place"></i> {props.data.city}
           </li>
           <li>
+            <img src={props.data.icon}></img>
             <span id="current-temp">
               {Math.round(props.data.temperature)}°C
             </span>
