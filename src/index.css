@@ -1,1 +1,78 @@
+body {
+  background-color: #ffdfdf;
+}
 
+.App {
+  font-family: "Poppins", sans-serifs;
+}
+
+.Container {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 80px auto;
+  border-radius: 10px;
+  max-width: 800px;
+  background-color: #fff6f6;
+}
+
+.Quick h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 45px;
+  font-family: "Poppins", sans-serifs;
+  padding-top: 40px;
+  text-align: center;
+}
+
+#current-temp {
+  font-size: 35px;
+}
+
+form {
+  padding: 40px;
+  font-size: larger;
+  text-align: center;
+}
+
+.searchButton,
+.currentButton {
+  background-color: #fb929e;
+  color: white;
+  border-radius: 5px;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  color: #fb929e;
+  background-color: white;
+  border-color: #fb929e;
+}
+
+.currentButton:hover {
+  cursor: pointer;
+  color: #fb929e;
+  background-color: white;
+  border-color: #fb929e;
+}
+
+.quick {
+  text-align: center;
+}
+
+.place {
+  color: #fb929e;
+}
+
+a {
+  color: #fb929e;
+}
+
+a:hover {
+  cursor: default;
+}
+
+.Date {
+  font-size: 20px;
+}

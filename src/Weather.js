@@ -32,6 +32,8 @@ export default function Weather() {
         </div>
       </form>
 
+      <div className="Date text-center p-4">Friday 18:04</div>
+
       <div class="row justify-content-evenly combinedReport">
         <div class="col-4 quick">
           <ul class="list-unstyled">
