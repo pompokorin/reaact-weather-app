@@ -1,68 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function Weather() {
-  return (
-    <div className="SearchCity">
-      <form id="search">
-        <div className="row justify-content-center">
-          <div className="col-6">
-            <input
-              type="text"
-              className="search form-control shadow-sm"
-              placeholder="Type a city..."
-              autofocus="on"
-              autocomplete="off"
-              id="search-input"
-            />
-          </div>
-          <div class="col-2 p-0">
-            <button type="submit" className="searchButton" id="search-button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
-          <div class="col-2 p-0">
-            <button
-              type=" submit"
-              className="currentButton"
-              id="current-button"
-            >
-              Current
-            </button>
-          </div>
-        </div>
-      </form>
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      city: response.data.city,
+      temperature: response.data.temperature.current,
+      description: response.data.condition.description,
+      actualTemperature: response.data.temperature.feels_like,
+      humidity: response.data.temperature.humidity,
+      wind: response.data.wind.speed,
+      pressure: response.data.temperature.pressure,
+    });
+  }
+
+  if (weatherData.ready) {
+    return (
       <div class="row justify-content-evenly combinedReport">
         <div className="Date text-center p-4">Friday 18:04</div>
         <div class="col-4 quick">
           <ul class="list-unstyled">
             <li id="current-city">
-              <i class="fa-solid fa-location-dot place"></i> Sydney
+              <i class="fa-solid fa-location-dot place"></i> {weatherData.city}
             </li>
             <li>
-              <span id="current-temp">21°C</span>
+              <span id="current-temp">
+                {Math.round(weatherData.temperature)}°C
+              </span>
             </li>
-            <li id="description">Broken Clouds</li>
+            <li id="description">{weatherData.description}</li>
           </ul>
         </div>
 
         <div class="col-4 detail">
           <ul class="list-unstyled">
             <li>
-              Feels like: <span id="feels-like">21</span>°C
+              Feels like:{" "}
+              <span id="feels-like">
+                {Math.round(weatherData.actualTemperature)}
+              </span>
+              °C
             </li>
             <li>
-              Wind: <span id="wind">7</span> km/h
+              Wind: <span id="wind">{weatherData.wind}</span> km/h
             </li>
             <li>
-              Humidity: <span id="humidity">66</span>%
+              Humidity: <span id="humidity">{weatherData.humidity}</span>%
             </li>
             <li>
-              Pressure: <span id="pressure">1022</span> hPa
+              Pressure: <span id="pressure">{weatherData.pressure}</span> hPa
             </li>
           </ul>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "040ffb19o36e1562a0f417abf724b2t9";
+    let city = "Sydney";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
 }
