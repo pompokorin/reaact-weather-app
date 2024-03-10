@@ -51,12 +51,12 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div class="col-2 p-0">
+            <div className="col-2 p-0">
               <button type="submit" className="searchButton" id="search-button">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
-            <div class="col-2 p-0">
+            <div className="col-2 p-0">
               <button
                 type=" submit"
                 className="currentButton"

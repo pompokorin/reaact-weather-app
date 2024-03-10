@@ -9,8 +9,8 @@ export default function WeatherInfo(props) {
       <div className="DateTime text-center p-4">
         <FormattedDate date={props.data.date} />
       </div>
-      <div class="col-4 quick">
-        <ul class="list-unstyled">
+      <div className="col-4 quick">
+        <ul className="list-unstyled">
           <li id="current-city">
             <i class="fa-solid fa-location-dot place"></i> {props.data.city}
           </li>
@@ -22,8 +22,8 @@ export default function WeatherInfo(props) {
         </ul>
       </div>
 
-      <div class="col-4 detail">
-        <ul class="list-unstyled">
+      <div className="col-4 detail">
+        <ul className="list-unstyled">
           <li>
             Feels like:{" "}
             <span id="feels-like">
