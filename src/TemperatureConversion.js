@@ -13,7 +13,7 @@ export default function TemperatureConversion(props) {
     setUnit("celsius");
   }
 
-  if (unit == "celsius") {
+  if (unit === "celsius") {
     return (
       <div className="TemperatureConversion">
         <span id="current-temp">{Math.round(props.celsius)}</span>
