@@ -80,3 +80,7 @@ a:hover {
 .WeatherForecast {
   text-align: center;
 }
+
+.unit a {
+  text-decoration: none;
+}
