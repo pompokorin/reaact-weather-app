@@ -76,3 +76,7 @@ a:hover {
 .DateTime {
   font-size: 20px;
 }
+
+.WeatherForecast {
+  text-align: center;
+}

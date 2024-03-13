@@ -12,11 +12,15 @@ export default function WeatherInfo(props) {
       <div className="col-4 quick">
         <ul className="list-unstyled">
           <li id="current-city">
-            <i class="fa-solid fa-location-dot place"></i> {props.data.city}
+            <i className="fa-solid fa-location-dot place"></i> {props.data.city}
           </li>
           <li>
-            <WeatherIcon code={props.data.icon} />
-            <TemperatureConversion celsius={props.data.temperature} />
+            <span>
+              <WeatherIcon code={props.data.icon} />
+            </span>
+            <span>
+              <TemperatureConversion celsius={props.data.temperature} />
+            </span>
           </li>
           <li id="description">{props.data.description}</li>
         </ul>
