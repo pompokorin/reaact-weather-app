@@ -58,18 +58,10 @@ export default function Weather(props) {
                 <i className="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
-            <div className="col-2 p-0">
-              <button
-                type=" submit"
-                className="currentButton"
-                id="current-button"
-              >
-                Current
-              </button>
-            </div>
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <hr />
         <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );

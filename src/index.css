@@ -27,7 +27,7 @@ h2 {
 }
 
 #current-temp {
-  font-size: 35px;
+  font-size: 36px;
 }
 
 form {
@@ -74,13 +74,18 @@ a:hover {
 }
 
 .DateTime {
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .WeatherForecast {
   text-align: center;
+  padding: 30px;
 }
 
 .unit a {
   text-decoration: none;
+}
+
+.temp {
+  font-size: 34px;
 }
